@@ -1,0 +1,19 @@
+.btn{
+    border-radius: 4px;
+    border: none;
+    padding: 10px 32px;
+    min-width: 200px;
+    color: var(--main-hero-color);
+    background-color:var(--main-btn-accent-color) ;
+    
+    font-family:Roboto, sans-serif;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em; 
+
+    transition: color,   250ms var(--function-transition),
+    background-color 250ms var(--function-transition) ;
+
+}
