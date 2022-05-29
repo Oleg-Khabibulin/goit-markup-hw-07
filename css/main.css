@@ -171,34 +171,38 @@
 }
 
 .skills__list {
-  display: flex;
+  display: block;
+}
+@media screen and (min-width: 786px) {
+  .skills__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-.skills__item + .skills__item {
-  margin-left: var(--tipical-margin);
+.skills__item {
+  margin-bottom: 30px;
 }
-
-.skills__title {
-  margin-bottom: 10px;
-  color: var(--main-first-color);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.skills__text {
-  width: 270px;
-  color: var(--main-secondary-color);
-  line-height: 24px;
+@media screen and (min-width: 768px) {
+  .skills__item {
+    width: calc(50% - 30px);
+  }
+  .skills__item:last-child {
+    margin-bottom: 30px;
+  }
+  .skills__item:nth-child(2n+1) {
+    margin-right: 30px;
+  }
+  .skills__item:nth-child(n+3) {
+    margin-bottom: 0px;
+  }
 }
 
 .skills__img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 270px;
+  width: 100%;
   height: 120px;
   background-color: #F5F4FA;
   border-radius: 4px;
@@ -210,6 +214,23 @@
   height: 70px;
 }
 
+.skills__title {
+  margin-bottom: 10px;
+  color: var(--main-first-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skills__text {
+  width: 100%;
+  color: var(--main-secondary-color);
+  line-height: 24px;
+}
+
 .product {
   padding-top: 0;
   color: var(--main-first-color);
@@ -217,6 +238,7 @@
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
+  display: block;
 }
 
 .product__title {
@@ -230,6 +252,7 @@
 
 .product__list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .product__item + .product__item {
@@ -265,7 +288,6 @@
 
 .team {
   background-color: #F5F4FA;
-  max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -276,18 +298,41 @@
   line-height: 1.16;
   text-align: center;
   letter-spacing: 0.03em;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .team__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .team__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .team__item {
+  margin-bottom: 30px;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF;
+}
+.team__item:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .team__item {
+    width: calc(50% - 30px);
+  }
+  .team__item:last-child {
+    margin-bottom: 30px;
+  }
+  .team__item:nth-child(2n+1) {
+    margin-right: 30px;
+  }
+  .team__item:nth-child(n+3) {
+    margin-bottom: 0px;
+  }
 }
 
 .team__subtitle {
@@ -310,16 +355,13 @@
 
 .team__img {
   margin-bottom: var(--tipical-margin);
-}
-
-.team__item + .team__item {
-  margin-left: 30px;
+  width: 100%;
 }
 
 .soc-list {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  padding-bottom: 24px;
 }
 
 .soc-list__link {
@@ -367,10 +409,23 @@
 .client__list {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 480px) {
+  .client__item {
+    width: calc(50% - 30px);
+  }
+  .client__item:nth-child(2n+1) {
+    margin-right: 30px;
+  }
+  .client__item:nth-child(-n+5) {
+    margin-bottom: 30px;
+  }
 }
 
 .client__link {
-  width: 170px;
+  width: 210px;
   height: 92px;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
@@ -382,10 +437,6 @@
 .client__link:hover {
   border: 1px solid var(--main-btn-accent-color);
   border-radius: 4px;
-}
-
-.client__item + .client__item {
-  margin-left: 30px;
 }
 
 .client__icon {
@@ -925,10 +976,20 @@ img {
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
 
 .btn {
@@ -956,6 +1017,6 @@ body {
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,5 @@
 .client {
     background-color: #FFFFFF;
-    max-width: 1600px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -16,9 +15,21 @@
 .client__list{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+
 }
+.client__item{
+  
+    &:nth-child(2n+1){
+            margin-right: 30px;
+    }
+    &:nth-child(-n + 4){
+            margin-bottom: 30px;
+    }     
+}
+
 .client__link{
-    width: 170px;   
+    width: 210px;   
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
@@ -36,10 +47,6 @@
     }
 }
 
-
-.client__item +.client__item{
-    margin-left: 30px;
-}
 .client__icon{
     fill: #AFB1B8;
 

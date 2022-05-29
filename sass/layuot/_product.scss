@@ -5,6 +5,8 @@
     font-size: 36px;
     line-height: 1.16;
     text-align: center;
+    display: block;
+    
 }
 
 .product__title{
@@ -18,6 +20,7 @@
 }
 .product__list{
     display: flex;
+    flex-wrap: wrap;
 }
 .product__item + .product__item{
     margin-left: var(--tipical-margin);
@@ -30,6 +33,7 @@
 }
 .product__img{
     position: relative;
+
     
 }
 .product__text{
