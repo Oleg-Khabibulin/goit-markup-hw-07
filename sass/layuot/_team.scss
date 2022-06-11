@@ -21,6 +21,8 @@
         flex-wrap: wrap;   
        
     }
+
+
 }
 .team__item{
     margin-bottom: 30px;
@@ -37,9 +39,7 @@
     @media screen and (min-width: 768px){
         width: calc(100% / 2 - 30px);
         
-        &:last-child{
-            margin-bottom: 30px;
-        }
+        
         &:nth-child(2n+1){
             margin-right: 30px;
         }
@@ -47,6 +47,22 @@
             margin-bottom: 0px;
         }     
 
+    }
+
+    @media screen and (min-width: 1200px){
+        
+        width: calc(100% / 4 - 30px);
+        
+        margin-bottom: 0px;
+        
+        
+        &:nth-child(n+1){
+            margin-right: 30px;
+        }
+
+        &:last-child{
+            margin-right: 0px;
+        }
     }
 }
 

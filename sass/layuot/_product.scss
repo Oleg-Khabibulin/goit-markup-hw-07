@@ -1,15 +1,20 @@
 .product{
-    padding-top: 0;
-    color: var(--main-first-color) ;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.16;
-    text-align: center;
-    display: block;
     
+    display: none;
+    
+    @media screen and (min-width: 1200px){
+        display: block;
+        padding-top: 0;
+        color: var(--main-first-color) ;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.16;
+        text-align: center;
+    }
 }
 
 .product__title{
+    
     margin-bottom: 50px;
   
     font-weight: 700;
@@ -19,6 +24,7 @@
     letter-spacing: 0.03em;  
 }
 .product__list{
+    
     display: flex;
     flex-wrap: wrap;
 }

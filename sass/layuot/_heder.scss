@@ -1,35 +1,202 @@
 .heder{
-    max-width: 1600px;
+    max-width: 100%;
     border-bottom: 1px solid #ECECEC;
     margin-right: auto;
     margin-left: auto;
 
-    background-color:#FFFFFF;
+    background-color:var(--main-hero-color);
+
+    @media screen and (min-width: 768px){
+        max-width: 768px;
+        height: 80px;
+    }
+    @media screen and (min-width: 1200px){
+        max-width: 1600px;
+        height: 80px;
+    }
 }
 
-/* <<<<<<<<<<<<<<<НАВІГАЦІЯ>>>>>>>>>>>>>>>>>.. */
+
 
  .heder-main{
     display: flex;
     align-items: center;
+    
 }
 .navigation{
     display: flex;
+    
 }
 
 .navigation__logo{
-    display: block;
-    margin-right: 93px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    
+    
+    padding-top: 16px;
+    padding-bottom: 16px;
     
     color: var(--heder-main-color) ;
     font-family: 'Raleway' ,sans-serif;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
+    font-size: 24px;
+    line-height: 1.16;
     letter-spacing: 0.03em; 
+
+    @media screen and (min-width: 768px){
+        padding-top: 26px;
+        padding-bottom: 26px;
+        margin-right: 88px;
+    }
+
+    @media screen and (min-width: 1200px){
+        font-size: 26px;
+        line-height: 1.19;
+
+        padding-top: 24px;
+        padding-bottom: 24px;
+        margin-right: 93px;
+    }
 }
+
+.navigation__menu--open{
+    border: 0;
+    background-color: var(--main-hero-color);
+    color:  #000000;
+    &:hover {
+        fill: var(--main-btn-accent-color);
+        transition: fill 250ms var(--function-transition) ;  
+    }
+
+    @media screen and (min-width: 768px){
+        display: none;
+
+    }
+}
+.navigation__icon{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    
+}
+
+/* <<<<<<<<<<<<<<<МОБІЛЬНЕ МЕНЮ>>>>>>>>>>>>>>>>>.. */
+.mob{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 40px;
+    background-color: var(--main-hero-color);
+    
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+
+    @media screen and (min-width: 768px){
+            display: none;
+    }
+    
+}
+.mob__menu--close{
+    
+    border: 0;
+    background-color: var(--main-hero-color);
+    color:  #000000;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    
+}
+.mob__icon{
+    width: 40px;
+    height: 40px;
+    .mob__menu--close:hover &{
+        fill: var(--main-btn-accent-color);
+        transition: fill 250ms var(--function-transition) ;  
+    }
+}
+
+.mob__link{
+    color: var(--heder-main-color) ;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    
+}
+.mob__link--acccent{
+    color: var(--heder-accent-color) ;
+}
+.mob__item{
+    margin-bottom: 32px;
+
+    &:last-child{
+        margin-bottom: 0px;
+    }
+}
+
+.mob-contact__mail{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+
+    color: var(--heder-secondary-color);
+    
+}
+.mob-contact__tell{
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+
+    color:var(--heder-accent-color);
+
+    
+}
+.mob-contact__items{
+    margin-bottom: 32px;
+
+    &:last-child{
+        margin-bottom: 64px;
+    }
+}
+.mob-soc{
+    display: flex;
+    position: relative;
+}
+.mob-soc__item{
+    
+    margin-right: 10px;
+
+    &:last-child{
+        margin-right: 0px;
+    }
+    &:not(:last-child){
+        padding-right: 10px;
+        border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+
+    
+}
+.mob-soc__link{
+    
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+
+    color: var( --heder-accent-color);
+    
+    
+}
+
+
+/* <<<<<<<<<<<<<<<НАВІГАЦІЯ>>>>>>>>>>>>>>>>>.. */
 .navigation__web{
     color:var(--heder-accent-color);
     font-family: 'Raleway' ,sans-serif;
@@ -40,7 +207,11 @@
 }
 
 .navigation__list{
-    display: flex;
+    display: none;
+
+    @media screen and (min-width: 768px){
+        display: flex;
+    }
     
 }
 .navigation__item + .navigation__item{
@@ -67,18 +238,63 @@
     
 }
 }
+.navigation__link--acccent{
+    position: relative; 
+    display:block;
+    padding-bottom: 32px;    
+    padding-top: 32px;
+
+    color:var(--heder-accent-color);
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em; 
+    
+
+    &::before{
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color: var(--heder-accent-color);
+        border-radius: 2px;  
+        
+        position: absolute;
+        bottom: 0px;
+        z-index: 3;  
+    }
+} 
 
 /* <<<<<<<<<<<<<<<КОНТАКТИ>>>>>>>>>>>>>>>>>.. */
 
 
 .contact{
-    display: flex;
-    margin-left: auto; 
-    padding-bottom: 32px;    
-    padding-top: 32px;  
+    display: none;
+    
+    @media screen and (min-width: 768px){
+        display: block;
+        margin-left: auto; 
+        padding-bottom: 21px;    
+        padding-top: 21px;  
+    }
+    @media screen and (min-width: 1200px){
+        display: flex;
+        margin-left: auto; 
+        padding-bottom: 32px;    
+        padding-top: 32px;  
+    }
 } 
+.contact__items{
+    margin-bottom: 10px;
+    &:last-child{
+        margin-bottom: 0px;
+    }
+    @media screen and (min-width: 1200px){
+        margin-bottom: 10px;
+    }
+}
 .contact__items +.contact__items{
-    margin-left: 50px;
+    @media screen and (min-width: 1200px){
+        margin-left: 50px;
+    } 
 }
 
 
@@ -94,37 +310,15 @@
 
     &:hover ,
     &:focus{
-        color:var(--heder-accent-color);  
+        color:var(--heder-accent-color);       
 }
-}
-
-.navigation__link--acccent{
-    position: relative; 
-    display:block;
-    padding-bottom: 32px;    
-    padding-top: 32px;
-
-    color:var(--heder-accent-color);
-    font-weight: 500;
-    line-height: 1.14;
-    letter-spacing: 0.02em; 
-    
-
-    &::before{
-        content: "";
-       width: 100%;
-        height: 4px;
-        background-color: var(--heder-accent-color);
-        border-radius: 2px;  
-        
-        position: absolute;
-        bottom: -1px;
-        z-index: 2;  
+    @media screen and (min-width: 768px){
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.16px;
+        letter-spacing: 0.02em;
     }
-}       
-
-
-
+}
 
 .contact__post{  
     height: 12px;
